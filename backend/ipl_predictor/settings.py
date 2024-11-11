@@ -56,7 +56,7 @@ MIDDLEWARE = [
     'django.middleware.common.CommonMiddleware',
 ]
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:3000"
+    "https://predict-id5z.onrender.com"
 ]
 ROOT_URLCONF = "ipl_predictor.urls"
 
