@@ -29,7 +29,7 @@ function App() {
   const handlePredict = async () => {
     const payload = { batting_team: battingTeam, bowling_team: bowlingTeam, city: selectedCity, target, score, overs, wickets };
     try {
-      const response = await axios.post("http://127.0.0.1:8000/api/predict/", payload);
+      const response = await axios.post("https://ipl-mqbn.onrender.com/api/predict/", payload);
       setPrediction(response.data);
     } catch (error) {
       console.error("Error making prediction", error);
