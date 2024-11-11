@@ -24,7 +24,11 @@ SECRET_KEY = "django-insecure-#-(u9fwph-6%iob&jc4wl1-bfn_ago8o18j#s^g-9+t4v3!fr0
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-ALLOWED_HOSTS = ['*']  # Allow all hosts for testing
+
+ALLOWED_HOSTS = []
+
+
+# Application definition
 
 INSTALLED_APPS = [
     "django.contrib.admin",
@@ -33,7 +37,8 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    'corsheaders',  # Make sure this is installed
+    'corsheaders',
+
 ]
 
 MIDDLEWARE = [
@@ -44,27 +49,11 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
-    'corsheaders.middleware.CorsMiddleware',  # CorsMiddleware must be added here
-    'django.middleware.common.CommonMiddleware',  # Optional: Duplicate but can help in some cases
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
 ]
-
-CORS_ALLOW_ALL_ORIGINS = True  # Allow all origins, you can replace it with specific domains if needed
-
-CORS_ALLOW_METHODS = [
-    "GET",
-    "POST",
-    "OPTIONS",  # Ensure OPTIONS is allowed
-]
-
-CORS_ALLOW_HEADERS = [
-    "Content-Type",  # Ensure Content-Type header is allowed
-]
-
-
-import os
-
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-
+CORS_ALLOW_ALL_ORIGINS = True
+ROOT_URLCONF = "ipl_predictor.urls"
 
 TEMPLATES = [
     {
