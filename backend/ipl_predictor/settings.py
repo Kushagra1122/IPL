@@ -27,7 +27,15 @@ DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
+TATIC_URL = '/static/'
 
+# The directory where static files will be collected
+STATIC_ROOT = BASE_DIR / 'staticfiles'
+
+# Optional: Directories to search for additional static files
+STATICFILES_DIRS = [
+    BASE_DIR / 'static',  # Custom static files directory
+]
 # Application definition
 
 INSTALLED_APPS = [
